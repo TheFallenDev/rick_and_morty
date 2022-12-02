@@ -6,7 +6,6 @@ const DivStyle = styled.div`
    max-width: 15em;
    height: fit-content;
    border-radius: 5px;
-   box-shadow: 10px 10px 10px #fffbfb33;
    margin: 20px;
    transition: all 0.25s;
    &:hover,

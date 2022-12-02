@@ -13,7 +13,7 @@ const Container = styled.div `
 
 
 export default function Cards(props) {
-   const { characters } = props;
+   const { characters, onClose } = props;
    return (
       <Container>
          {characters.map((char) => (
@@ -23,7 +23,7 @@ export default function Cards(props) {
                gender={char.gender}
                species={char.species}
                image={char.image}
-               onClose={() => alert('Emulamos que se cierra la card')}
+               onClose={() => onClose(char.id)}
                
             />
          ))}

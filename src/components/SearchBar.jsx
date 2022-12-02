@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Input = styled.input.attrs({type: 'search'})`
-   background-color: white;
+   color: white;
+   background-color: #671079;
    height: 2.5em;
    margin: 20px;
    border-radius: 6px;
@@ -9,20 +11,23 @@ const Input = styled.input.attrs({type: 'search'})`
 
 const Button = styled.button`
    color: white;
-   background-color: #56d356;
+   background-color: #7e0f8d;
    height: 2.5em;
-   border-color: gray;
-   border-style:solid;
    font-family: system-ui;
    font-weight: bold;
 `
 
 export default function SearchBar(props) {
-   const { onSearch } = props
+
+   const [id, setId] = useState('');
+
+   const handleInputChange = (event)=>{
+      setId(event.target.value)
+   };
    return (
       <div>
-         <Input/>
-         <Button onClick={() => onSearch('Lalala')}>Agregar</Button>
+         <Input type='search' value={id} onChange={handleInputChange}/>
+         <Button onClick={()=>props.onSearch(id)}>Agregar</Button>
       </div>
    );
 }
