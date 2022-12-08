@@ -21,7 +21,7 @@ export default function Detail() {
     }, [detailId]);
     return (
         <>
-            {character?
+            {character &&
             <div>
                 <h1>{character.name}</h1>
                 <h3>Status: {character.status}</h3>
@@ -29,7 +29,7 @@ export default function Detail() {
                 <h3>Gender: {character.gender}</h3>
                 <h3>Origin: {character.origin?.name}</h3>
                 <img src={character.image} alt="pic"/>
-            </div>: []}
+            </div>}
         </>
     )
 }

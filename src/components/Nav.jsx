@@ -31,6 +31,7 @@ export default function Nav(props) {
         <Bar>
           <SearchBar onSearch={props.onSearch} />
         </Bar>
+        <Button onClick={props.logout}>Logout</Button>
       </NavBar>
     </div>
   );
