@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const DivStyle = styled.div`
@@ -56,7 +57,9 @@ export default function Card(props) {
       <DivStyle> 
          <ButtonStyle onClick={props.onClose}>X</ButtonStyle>
          <ImgStyle src={props.image} alt=""/>
-         <NameStyle>{props.name}</NameStyle>
+         <Link to={`/detail/${props.id}`}>
+            <NameStyle>{props.name}</NameStyle>
+         </Link>
          <H2Style>{props.gender}</H2Style>
          <H2Style>{props.species}</H2Style>   
       </DivStyle>
