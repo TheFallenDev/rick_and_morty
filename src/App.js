@@ -7,6 +7,7 @@ import Nav from './components/Nav'
 import About from './components/About'
 import Detail from './components/Detail'
 import Form from './components/Form/Form'
+import Favorites from './components/Favorites'
 
 function App () {
   const [access, setAccess] = useState(false);
@@ -56,6 +57,7 @@ function App () {
         <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/detail/:detailId' element={<Detail/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
     </div>
