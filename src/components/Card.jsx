@@ -37,7 +37,7 @@ const ImgStyle = styled.img `
    width: 100%;
    height: 250px;
    margin-bottom: -60px;
-`
+   `
 
 const NameStyle = styled.h2 `
    color: white;
@@ -46,7 +46,7 @@ const NameStyle = styled.h2 `
    opacity: 0.99;
    width: fit-content;
    display: flex;
-`
+   `
 
 const H2Style = styled.h2 `
    margin-top: -10px;
@@ -54,35 +54,35 @@ const H2Style = styled.h2 `
    padding: 5px;
    font-size: 20px;
    font-weight: normal;
-`
+   `
 
-function Card(props, myFavorites, {addFavorite, removeFavorite}) {
 
+function Card( props ) {
    const [isFav, setIsFav] = useState(false);
    const handleFavorite = ()=>{
       if(isFav) {
          setIsFav(false);
-         removeFavorite(props.id)
+         props.removeFavorite(props.id)
       } else {
          setIsFav(true);
-         addFavorite(props)
+         props.addFavorite(props)
       }
    }
-
+   
    useEffect(() => {
-   myFavorites.forEach((fav) => {
+   props.myFavorites.forEach((fav) => {
       if (fav.id === props.id) {
          setIsFav(true);
       }
    });
-   }, [myFavorites]);
+   }, [props.myFavorites]);
 
-   return (
-     <DivStyle>
+return (
+   <DivStyle>
        {isFav ? (
          <ButtonStyle onClick={handleFavorite}>❤️</ButtonStyle>
-       ) : (
-         <ButtonStyle onClick={handleFavorite}>🤍</ButtonStyle>
+         ) : (
+            <ButtonStyle onClick={handleFavorite}>🤍</ButtonStyle>
        )}
        <ButtonStyle onClick={props.onClose}>X</ButtonStyle>
        <ImgStyle src={props.image} alt="" />
@@ -101,7 +101,7 @@ export function mapStateToProps(state){
    }
 }
 
-function mapDispatchToProps(dispatch){
+export function mapDispatchToProps(dispatch){
    return {
       addFavorite: function(props){
          dispatch(addFavorite(props))
