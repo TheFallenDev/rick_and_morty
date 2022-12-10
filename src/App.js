@@ -8,7 +8,6 @@ import About from './components/About'
 import Detail from './components/Detail'
 import Form from './components/Form/Form'
 
-
 function App () {
   const [access, setAccess] = useState(false);
   const [characters, setCharacters] = useState([]);
