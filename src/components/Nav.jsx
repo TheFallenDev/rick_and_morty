@@ -59,12 +59,6 @@ const NavbarLinkExtended = styled(NavLink)`
   margin: 10px;
 `;
 
-const Logo = styled.img`
-  margin: 10px;
-  max-width: 180px;
-  height: auto;
-`;
-
 const OpenLinksButton = styled.button`
   width: 70px;
   height: 50px;
